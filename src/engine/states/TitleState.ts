@@ -79,13 +79,19 @@ export class TitleState implements GameState {
   private handleMouse(): void {
     const layout = titleLayout(this.game.width, this.game.height, this.items.length);
     const mouse = this.game.input.getMousePos();
+    const moved = this.game.input.didMouseMove();
     for (let i = 0; i < layout.items.length; i++) {
       if (rectContains(layout.items[i]!, mouse)) {
-        if (this.selected !== i) {
+        // Hover só muda a seleção com movimento real do mouse, para não
+        // sobrescrever a navegação por teclado a cada frame.
+        if (moved && this.selected !== i) {
           this.selected = i;
           this.game.audio.play('menu');
         }
-        if (this.game.input.wasClicked()) this.items[i]?.action();
+        if (this.game.input.wasClicked()) {
+          this.selected = i;
+          this.items[i]?.action();
+        }
         return;
       }
     }

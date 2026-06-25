@@ -59,13 +59,19 @@ export class MainMenuState implements GameState {
     const layout = menuLayout(this.game.width, this.game.height, this.game.data.classes.length, false);
     const mouse = input.getMousePos();
 
+    const moved = input.didMouseMove();
     for (let i = 0; i < layout.cards.length; i++) {
       if (rectContains(layout.cards[i]!, mouse)) {
-        if (this.selected !== i) {
+        // Só deixa o hover mudar a seleção quando o mouse realmente se mexeu;
+        // senão o cursor parado sobre um card sobrescreveria as setas a cada frame.
+        if (moved && this.selected !== i) {
           this.selected = i;
           this.game.audio.play('menu');
         }
-        if (input.wasClicked()) this.confirm();
+        if (input.wasClicked()) {
+          this.selected = i;
+          this.confirm();
+        }
         return;
       }
     }

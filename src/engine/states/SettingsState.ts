@@ -110,13 +110,19 @@ export class SettingsState implements GameState {
   private handleMouse(): void {
     const rects = settingsLayout(this.game.width, this.game.height, this.rows.length);
     const mouse = this.game.input.getMousePos();
+    const moved = this.game.input.didMouseMove();
     for (let i = 0; i < rects.length; i++) {
       if (rectContains(rects[i]!, mouse)) {
-        if (this.selected !== i) {
+        // Hover só muda a seleção com movimento real do mouse, para não
+        // sobrescrever a navegação por teclado a cada frame.
+        if (moved && this.selected !== i) {
           this.selected = i;
           this.game.audio.play('menu');
         }
-        if (this.game.input.wasClicked()) this.activate();
+        if (this.game.input.wasClicked()) {
+          this.selected = i;
+          this.activate();
+        }
         return;
       }
     }

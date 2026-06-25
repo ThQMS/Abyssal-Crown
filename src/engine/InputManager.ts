@@ -57,6 +57,7 @@ export class InputManager {
   private readonly listeners = new Set<(action: InputActionName) => void>();
   private mousePos: Vec2 = { x: 0, y: 0 };
   private mouseClicked = false;
+  private mouseMovedFlag = false;
   private pointerDown = false;
   private attached = false;
 
@@ -104,6 +105,15 @@ export class InputManager {
     return this.mouseClicked;
   }
 
+  /**
+   * True when the pointer moved since the last {@link flush}. Menu states use
+   * this so hover-selection only kicks in on actual mouse movement, instead of
+   * overriding keyboard navigation every frame while the cursor sits still.
+   */
+  didMouseMove(): boolean {
+    return this.mouseMovedFlag;
+  }
+
   getMousePos(): Vec2 {
     return { ...this.mousePos };
   }
@@ -113,6 +123,7 @@ export class InputManager {
     this.justPressed.clear();
     this.justReleased.clear();
     this.mouseClicked = false;
+    this.mouseMovedFlag = false;
     this.pressedQueue.length = 0;
   }
 
@@ -174,6 +185,7 @@ export class InputManager {
 
   private readonly handlePointerMove = (e: PointerEvent): void => {
     this.updateMousePos(e);
+    this.mouseMovedFlag = true;
   };
 
   private readonly handlePointerDown = (e: PointerEvent): void => {

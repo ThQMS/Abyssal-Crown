@@ -609,6 +609,8 @@ export class CombatUI {
     const gap = 8;
     const bw = (areaW - (count - 1) * gap) / count;
     const bh = areaH;
+    const pad = 7;
+    const innerW = bw - pad * 2;
 
     for (let i = 0; i < count; i++) {
       const x = areaX + i * (bw + gap);
@@ -625,26 +627,39 @@ export class CombatUI {
       ctx.textBaseline = 'alphabetic';
       if (skill) {
         const cd = view.cooldownOf(skill.id);
+        // Nome: trunca com reticências para nunca vazar do botão.
         ctx.fillStyle = sel ? '#ffffff' : cd > 0 ? '#6a6a7a' : ELEMENT_COLORS[skill.element];
-        ctx.font = 'bold 12px "Courier New", monospace';
-        ctx.fillText(`${i + 1}. ${skill.name}`, x + 8, areaY + 19);
+        ctx.font = 'bold 11px "Courier New", monospace';
+        ctx.fillText(this.ellipsize(ctx, `${i + 1}. ${skill.name}`, innerW), x + pad, areaY + 17);
+
+        // Linha inferior: custo de mana (esq.) e prontidão/recarga (dir.).
+        ctx.font = '10px "Courier New", monospace';
         ctx.fillStyle = '#6a8aff';
-        ctx.font = '11px "Courier New", monospace';
-        ctx.fillText(`Mana: ${skill.mpCost}`, x + 8, areaY + 36);
+        ctx.fillText(`Mana ${skill.mpCost}`, x + pad, areaY + 35);
         ctx.textAlign = 'right';
         if (cd > 0) {
           ctx.fillStyle = '#e0a040';
-          ctx.fillText(`Recarga ${cd}`, x + bw - 8, areaY + 36);
+          ctx.fillText(`Recarga ${cd}`, x + bw - pad, areaY + 35);
         } else {
           ctx.fillStyle = '#7ad88a';
-          ctx.fillText('Pronto', x + bw - 8, areaY + 36);
+          ctx.fillText('Pronto', x + bw - pad, areaY + 35);
         }
       } else {
         ctx.fillStyle = '#555';
-        ctx.font = '12px "Courier New", monospace';
-        ctx.fillText(`${i + 1}. —`, x + 8, areaY + bh / 2 + 4);
+        ctx.font = '11px "Courier New", monospace';
+        ctx.fillText(`${i + 1}. —`, x + pad, areaY + bh / 2 + 4);
       }
     }
+  }
+
+  /** Trunca `text` com reticências para caber em `maxWidth` (fonte já definida). */
+  private ellipsize(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string {
+    if (ctx.measureText(text).width <= maxWidth) return text;
+    let cut = text;
+    while (cut.length > 1 && ctx.measureText(`${cut}…`).width > maxWidth) {
+      cut = cut.slice(0, -1);
+    }
+    return `${cut.trimEnd()}…`;
   }
 
   /** Texto da opção atualmente em foco (e prévia de eficácia no alvo). */
