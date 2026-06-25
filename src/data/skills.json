@@ -1,0 +1,620 @@
+[
+  {
+    "id": "strike",
+    "name": "Golpe Reto",
+    "description": "Um ataque físico confiável. Simples, rápido e difícil de errar.",
+    "element": "physical",
+    "mpCost": 0,
+    "power": 1.1,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 1,
+    "tier": 1
+  },
+  {
+    "id": "guard_break",
+    "name": "Quebra-Guarda",
+    "description": "Um corte pesado que ignora parte da defesa do alvo.",
+    "element": "physical",
+    "mpCost": 6,
+    "power": 1.2,
+    "penetration": 0.35,
+    "statusChance": 0,
+    "range": 1,
+    "tier": 1,
+    "requires": [
+      "strike"
+    ]
+  },
+  {
+    "id": "cursed_riposte",
+    "name": "Revide Amaldiçoado",
+    "description": "Transforma a dor da armadura em um contra-ataque brutal.",
+    "element": "physical",
+    "mpCost": 10,
+    "power": 1.75,
+    "penetration": 0.15,
+    "statusChance": 0.25,
+    "statusType": "weaken",
+    "range": 1,
+    "tier": 2,
+    "requires": [
+      "guard_break"
+    ],
+    "applies": [
+      {
+        "id": "weaken",
+        "duration": 2,
+        "magnitude": 3
+      }
+    ]
+  },
+  {
+    "id": "iron_vow",
+    "name": "Voto de Ferro",
+    "description": "Firma os pés no chão e cria uma defesa temporária.",
+    "element": "physical",
+    "mpCost": 8,
+    "power": 12,
+    "penetration": 0,
+    "statusChance": 1,
+    "statusType": "shield",
+    "range": 0,
+    "tier": 2,
+    "support": true,
+    "requires": [
+      "guard_break"
+    ],
+    "applies": [
+      {
+        "id": "shield",
+        "duration": 2,
+        "magnitude": 0
+      }
+    ]
+  },
+  {
+    "id": "black_armor",
+    "name": "Armadura Negra",
+    "description": "A maldição aperta o metal ao redor do corpo, reduzindo o dano recebido.",
+    "element": "physical",
+    "mpCost": 14,
+    "power": 18,
+    "penetration": 0,
+    "statusChance": 1,
+    "statusType": "shield",
+    "range": 0,
+    "tier": 3,
+    "support": true,
+    "requires": [
+      "iron_vow"
+    ],
+    "applies": [
+      {
+        "id": "shield",
+        "duration": 3,
+        "magnitude": 0
+      }
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "executioner_oath",
+    "name": "Juramento do Carrasco",
+    "description": "Um golpe finalizador que brilha contra inimigos já enfraquecidos.",
+    "element": "physical",
+    "mpCost": 18,
+    "power": 2.35,
+    "penetration": 0.25,
+    "statusChance": 0,
+    "range": 1,
+    "tier": 4,
+    "requires": [
+      "cursed_riposte"
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "arcane_bolt",
+    "name": "Seta Arcana",
+    "description": "Um projétil preciso de energia arcana, ideal para explorar fraquezas.",
+    "element": "arcane",
+    "mpCost": 5,
+    "power": 1.15,
+    "penetration": 0.05,
+    "statusChance": 0,
+    "range": 5,
+    "tier": 1
+  },
+  {
+    "id": "mend",
+    "name": "Remendar Carne",
+    "description": "Costura feridas com luz arcana instável.",
+    "element": "arcane",
+    "mpCost": 8,
+    "power": 18,
+    "healPercent": 0.28,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 1,
+    "support": true
+  },
+  {
+    "id": "mind_needle",
+    "name": "Agulha Mental",
+    "description": "Perfura a concentração do alvo e deixa sua defesa vulnerável.",
+    "element": "arcane",
+    "mpCost": 9,
+    "power": 1.25,
+    "penetration": 0.25,
+    "statusChance": 0.3,
+    "statusType": "weaken",
+    "range": 5,
+    "tier": 2,
+    "requires": [
+      "arcane_bolt"
+    ],
+    "applies": [
+      {
+        "id": "weaken",
+        "duration": 2,
+        "magnitude": 4
+      }
+    ]
+  },
+  {
+    "id": "focus_arcano",
+    "name": "Foco Arcano",
+    "description": "Concentra mana no sangue e prepara o próximo ataque poderoso.",
+    "element": "arcane",
+    "mpCost": 10,
+    "power": 0,
+    "penetration": 0,
+    "statusChance": 1,
+    "statusType": "empowered",
+    "range": 0,
+    "tier": 2,
+    "support": true,
+    "requires": [
+      "arcane_bolt"
+    ]
+  },
+  {
+    "id": "void_lance",
+    "name": "Lança do Vazio",
+    "description": "Uma lança de entropia pura que atravessa defesas comuns.",
+    "element": "arcane",
+    "mpCost": 16,
+    "power": 2.05,
+    "penetration": 0.4,
+    "statusChance": 0,
+    "range": 5,
+    "tier": 3,
+    "requires": [
+      "mind_needle"
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "greater_mend",
+    "name": "Milagre Imperfeito",
+    "description": "Uma cura forte demais para ser chamada de segura, mas eficaz.",
+    "element": "arcane",
+    "mpCost": 18,
+    "power": 40,
+    "healPercent": 0.55,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 3,
+    "support": true,
+    "requires": [
+      "mend"
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "singularity",
+    "name": "Singularidade Breve",
+    "description": "Comprime o espaço ao redor do inimigo em um pulso arcano devastador.",
+    "element": "arcane",
+    "mpCost": 26,
+    "power": 2.75,
+    "penetration": 0.25,
+    "statusChance": 0.2,
+    "statusType": "stun",
+    "range": 4,
+    "tier": 4,
+    "requires": [
+      "void_lance",
+      "focus_arcano"
+    ],
+    "applies": [
+      {
+        "id": "stun",
+        "duration": 1,
+        "magnitude": 0
+      }
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "firebolt",
+    "name": "Centelha Profana",
+    "description": "Arremessa uma chama pequena que pode deixar o alvo queimando.",
+    "element": "fire",
+    "mpCost": 5,
+    "power": 1.2,
+    "penetration": 0,
+    "statusChance": 0.35,
+    "statusType": "burning",
+    "range": 5,
+    "tier": 1,
+    "applies": [
+      {
+        "id": "burn",
+        "duration": 3,
+        "magnitude": 4
+      }
+    ]
+  },
+  {
+    "id": "cauterize",
+    "name": "Cauterizar",
+    "description": "Queima a própria ferida para recuperar vida imediatamente.",
+    "element": "fire",
+    "mpCost": 10,
+    "power": 22,
+    "healPercent": 0.32,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 2,
+    "support": true,
+    "requires": [
+      "firebolt"
+    ]
+  },
+  {
+    "id": "flame_judgment",
+    "name": "Julgamento em Chamas",
+    "description": "Uma explosão de fogo penitente que pune inimigos congelados ou arcanos.",
+    "element": "fire",
+    "mpCost": 13,
+    "power": 1.75,
+    "penetration": 0.1,
+    "statusChance": 0.45,
+    "statusType": "burning",
+    "range": 4,
+    "tier": 2,
+    "requires": [
+      "firebolt"
+    ],
+    "applies": [
+      {
+        "id": "burn",
+        "duration": 4,
+        "magnitude": 6
+      }
+    ]
+  },
+  {
+    "id": "inferno",
+    "name": "Inferno",
+    "description": "Um rugido de fogo que consome o espaço entre o paladino e o alvo.",
+    "element": "fire",
+    "mpCost": 18,
+    "power": 2.25,
+    "penetration": 0.15,
+    "statusChance": 0.65,
+    "statusType": "burning",
+    "range": 4,
+    "tier": 3,
+    "requires": [
+      "flame_judgment"
+    ],
+    "applies": [
+      {
+        "id": "burn",
+        "duration": 4,
+        "magnitude": 8
+      }
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "ashes_grace",
+    "name": "Graça das Cinzas",
+    "description": "Uma cura ardente que restaura vida e renova a vontade de lutar.",
+    "element": "fire",
+    "mpCost": 20,
+    "power": 48,
+    "healPercent": 0.5,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 3,
+    "support": true,
+    "requires": [
+      "cauterize"
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "martyr_flame",
+    "name": "Chama do Mártir",
+    "description": "A fé quebrada explode em fogo. Causa alto dano e deixa queimadura intensa.",
+    "element": "fire",
+    "mpCost": 28,
+    "power": 3,
+    "penetration": 0.2,
+    "statusChance": 1,
+    "statusType": "burning",
+    "range": 3,
+    "tier": 4,
+    "requires": [
+      "inferno",
+      "ashes_grace"
+    ],
+    "applies": [
+      {
+        "id": "burn",
+        "duration": 5,
+        "magnitude": 10
+      }
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "frost_shard",
+    "name": "Estilhaço de Gelo",
+    "description": "Um fragmento frio que pode congelar o alvo por um instante.",
+    "element": "frost",
+    "mpCost": 6,
+    "power": 1.15,
+    "penetration": 0,
+    "statusChance": 0.3,
+    "statusType": "freeze",
+    "range": 5,
+    "tier": 1,
+    "applies": [
+      {
+        "id": "freeze",
+        "duration": 1,
+        "magnitude": 0
+      }
+    ]
+  },
+  {
+    "id": "poison_mist",
+    "name": "Névoa Venenosa",
+    "description": "Sopra uma nuvem tóxica que corrói o alvo ao longo do tempo.",
+    "element": "poison",
+    "mpCost": 7,
+    "power": 0.9,
+    "penetration": 0,
+    "statusChance": 0.75,
+    "statusType": "poison",
+    "range": 4,
+    "tier": 1,
+    "applies": [
+      {
+        "id": "poison",
+        "duration": 4,
+        "magnitude": 5
+      }
+    ]
+  },
+  {
+    "id": "bone_prison",
+    "name": "Prisão de Ossos",
+    "description": "Ergue ossos do chão para enfraquecer e atrasar o inimigo.",
+    "element": "physical",
+    "mpCost": 11,
+    "power": 1,
+    "penetration": 0.1,
+    "statusChance": 0.5,
+    "statusType": "weaken",
+    "range": 4,
+    "tier": 2,
+    "requires": [
+      "poison_mist"
+    ],
+    "applies": [
+      {
+        "id": "weaken",
+        "duration": 3,
+        "magnitude": 4
+      }
+    ]
+  },
+  {
+    "id": "grave_chill",
+    "name": "Frio de Sepultura",
+    "description": "Marca o alvo com frio mortal, preparando controle e dano contínuo.",
+    "element": "frost",
+    "mpCost": 12,
+    "power": 1.45,
+    "penetration": 0.05,
+    "statusChance": 0.45,
+    "statusType": "freeze",
+    "range": 5,
+    "tier": 2,
+    "requires": [
+      "frost_shard"
+    ],
+    "applies": [
+      {
+        "id": "freeze",
+        "duration": 1,
+        "magnitude": 0
+      }
+    ]
+  },
+  {
+    "id": "blizzard",
+    "name": "Nevasca dos Mortos",
+    "description": "Uma tempestade gelada que pune alvos arcanos e tenta congelar todos ao redor.",
+    "element": "frost",
+    "mpCost": 18,
+    "power": 2.1,
+    "penetration": 0.1,
+    "statusChance": 0.6,
+    "statusType": "freeze",
+    "range": 4,
+    "tier": 3,
+    "requires": [
+      "grave_chill"
+    ],
+    "applies": [
+      {
+        "id": "freeze",
+        "duration": 2,
+        "magnitude": 0
+      }
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "rot_bloom",
+    "name": "Florescer da Podridão",
+    "description": "O veneno dentro do alvo floresce em dano pesado.",
+    "element": "poison",
+    "mpCost": 19,
+    "power": 2.2,
+    "penetration": 0.2,
+    "statusChance": 0.85,
+    "statusType": "poison",
+    "range": 4,
+    "tier": 3,
+    "requires": [
+      "poison_mist",
+      "bone_prison"
+    ],
+    "applies": [
+      {
+        "id": "poison",
+        "duration": 5,
+        "magnitude": 8
+      }
+    ],
+    "cooldown": 3
+  },
+  {
+    "id": "last_goodbye",
+    "name": "Último Adeus",
+    "description": "Invoca uma voz morta para paralisar o inimigo e rasgar sua alma.",
+    "element": "poison",
+    "mpCost": 27,
+    "power": 2.85,
+    "penetration": 0.3,
+    "statusChance": 0.55,
+    "statusType": "stun",
+    "range": 5,
+    "tier": 4,
+    "requires": [
+      "blizzard",
+      "rot_bloom"
+    ],
+    "applies": [
+      {
+        "id": "stun",
+        "duration": 1,
+        "magnitude": 0
+      }
+    ],
+    "cooldown": 4
+  },
+  {
+    "id": "spark",
+    "name": "Faísca",
+    "description": "Um choque rápido usado por criaturas e magos instáveis.",
+    "element": "arcane",
+    "mpCost": 4,
+    "power": 1.05,
+    "penetration": 0,
+    "statusChance": 0.25,
+    "statusType": "shock",
+    "range": 5,
+    "tier": 1,
+    "applies": [
+      {
+        "id": "shock",
+        "duration": 2,
+        "magnitude": 3
+      }
+    ]
+  },
+  {
+    "id": "chain_lightning",
+    "name": "Corrente de Raios",
+    "description": "Arcos de energia saltam pelo campo e deixam o alvo em choque.",
+    "element": "arcane",
+    "mpCost": 12,
+    "power": 1.8,
+    "penetration": 0.15,
+    "statusChance": 0.45,
+    "statusType": "shock",
+    "range": 5,
+    "tier": 2,
+    "requires": [
+      "spark"
+    ],
+    "applies": [
+      {
+        "id": "shock",
+        "duration": 2,
+        "magnitude": 4
+      }
+    ]
+  },
+  {
+    "id": "raise_dead",
+    "name": "Levantar Morto",
+    "description": "Ergue um esqueleto leal que luta ao seu lado por alguns turnos.",
+    "element": "void",
+    "mpCost": 14,
+    "power": 0,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 2,
+    "support": true,
+    "requires": [
+      "poison_mist"
+    ],
+    "summon": {
+      "name": "Esqueleto",
+      "sprite": "skelet",
+      "hp": 24,
+      "attack": 11,
+      "turns": 4
+    }
+  },
+  {
+    "id": "bone_legion",
+    "name": "Legião de Ossos",
+    "description": "Convoca dois servos esqueléticos para sobrecarregar os inimigos.",
+    "element": "void",
+    "mpCost": 26,
+    "power": 0,
+    "penetration": 0,
+    "statusChance": 0,
+    "range": 0,
+    "tier": 3,
+    "support": true,
+    "cooldown": 4,
+    "requires": [
+      "raise_dead"
+    ],
+    "summon": {
+      "name": "Servo Ósseo",
+      "sprite": "skelet",
+      "hp": 20,
+      "attack": 10,
+      "turns": 3,
+      "count": 2
+    }
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "lore_descent",
+    "title": "Sobre a Descida",
+    "speaker": "Inscrição Gasta",
+    "body": "Dizem que a Coroa afundou pelo próprio peso, arrastando o reino para o escuro. Cada andar que você atravessa é mais um ano em que o abismo esteve esperando."
+  },
+  {
+    "id": "lore_terminals",
+    "title": "Os Terminais Arcanos",
+    "speaker": "Arquimago Vellis",
+    "body": "Os antigos guardiões não trancavam seus cofres com chaves. Trancavam com lógica, pois confiavam apenas em mentes capazes de raciocinar na língua da máquina."
+  },
+  {
+    "id": "lore_elements",
+    "title": "As Seis Veias",
+    "speaker": "Inscrição Gasta",
+    "body": "Fogo derrete gelo. Gelo cala o arcano. O arcano dobra a chama. Aço e veneno seguem regras próprias, indiferentes à dança dos elementos."
+  },
+  {
+    "id": "lore_crown",
+    "title": "A Coroa Abissal",
+    "speaker": "Um Cavaleiro Moribundo",
+    "body": "Eu a vi no fundo: uma coroa de luz negra. Ela não governa os mortos. Ela é o motivo pelo qual eles não descansam. Destrua-a, se ainda conseguir."
+  },
+  {
+    "id": "lore_warning",
+    "title": "Aviso Riscado às Pressas",
+    "body": "Os baús mentem. Alguns vestem ouro como quem sorri. Se a fechadura cantar, resolva o enigma antes de tocar na recompensa."
+  },
+  {
+    "id": "lore_hope",
+    "title": "Brasas",
+    "speaker": "Arquimago Vellis",
+    "body": "Se você está lendo isto, alguém ainda desce. Isso basta. Acenda um terminal, depois o próximo. O caminho para baixo também é o caminho através."
+  }
+]

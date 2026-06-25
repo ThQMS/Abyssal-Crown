@@ -1,0 +1,265 @@
+[
+  {
+    "id": "flask_red",
+    "name": "Frasco Menor de Cura",
+    "description": "Restaura uma pequena quantidade de vida.",
+    "kind": "consumable",
+    "sprite": "flask_red",
+    "value": 20,
+    "tier": 1,
+    "modifiers": { "hp": 16 }
+  },
+  {
+    "id": "flask_med_red",
+    "name": "Frasco de Cura",
+    "description": "Restaura uma quantidade moderada de vida.",
+    "kind": "consumable",
+    "sprite": "flask_big_red",
+    "value": 35,
+    "tier": 2,
+    "modifiers": { "hp": 28 }
+  },
+  {
+    "id": "flask_big_red",
+    "name": "Frasco Maior de Cura",
+    "description": "Restaura uma grande quantidade de vida.",
+    "kind": "consumable",
+    "sprite": "flask_big_red",
+    "value": 50,
+    "tier": 3,
+    "modifiers": { "hp": 46 }
+  },
+  {
+    "id": "flask_blue",
+    "name": "Frasco Menor de Mana",
+    "description": "Restaura uma pequena quantidade de mana.",
+    "kind": "consumable",
+    "sprite": "flask_blue",
+    "value": 20,
+    "tier": 1,
+    "modifiers": { "mp": 14, "mana": 14 }
+  },
+  {
+    "id": "flask_med_blue",
+    "name": "Frasco de Mana",
+    "description": "Restaura uma quantidade moderada de mana.",
+    "kind": "consumable",
+    "sprite": "flask_big_blue",
+    "value": 35,
+    "tier": 2,
+    "modifiers": { "mp": 24, "mana": 24 }
+  },
+  {
+    "id": "flask_big_blue",
+    "name": "Frasco Maior de Mana",
+    "description": "Restaura uma grande quantidade de mana.",
+    "kind": "consumable",
+    "sprite": "flask_big_blue",
+    "value": 50,
+    "tier": 3,
+    "modifiers": { "mp": 38, "mana": 38 }
+  },
+  {
+    "id": "flask_big_green",
+    "name": "Elixir de Vigor",
+    "description": "Aumenta permanentemente a vida máxima.",
+    "kind": "consumable",
+    "sprite": "flask_big_green",
+    "value": 80,
+    "tier": 2,
+    "modifiers": { "maxHp": 6, "hp": 6 }
+  },
+  {
+    "id": "flask_big_yellow",
+    "name": "Elixir de Foco",
+    "description": "Aumenta permanentemente o poder mágico.",
+    "kind": "consumable",
+    "sprite": "flask_big_yellow",
+    "value": 80,
+    "tier": 2,
+    "modifiers": { "magic": 3, "attack": 1 }
+  },
+
+  {
+    "id": "weapon_rusty_sword",
+    "name": "Espada Enferrujada",
+    "description": "Uma lâmina velha, mas ainda corta.",
+    "kind": "weapon",
+    "sprite": "weapon_rusty_sword",
+    "value": 25,
+    "tier": 1,
+    "modifiers": { "attack": 2 }
+  },
+  {
+    "id": "weapon_knife",
+    "name": "Adaga Leve",
+    "description": "Rápida e silenciosa.",
+    "kind": "weapon",
+    "sprite": "weapon_knife",
+    "value": 30,
+    "tier": 1,
+    "modifiers": { "attack": 1, "speed": 2 }
+  },
+  {
+    "id": "weapon_regular_sword",
+    "name": "Espada Comum",
+    "description": "Uma espada confiável de soldado.",
+    "kind": "weapon",
+    "sprite": "weapon_regular_sword",
+    "value": 55,
+    "tier": 2,
+    "modifiers": { "attack": 4 }
+  },
+  {
+    "id": "weapon_mace",
+    "name": "Maça de Guerra",
+    "description": "Pesada e implacável contra armaduras.",
+    "kind": "weapon",
+    "sprite": "weapon_mace",
+    "value": 65,
+    "tier": 2,
+    "modifiers": { "attack": 5 }
+  },
+  {
+    "id": "weapon_axe",
+    "name": "Machado de Batalha",
+    "description": "Um machado pesado de duas mãos.",
+    "kind": "weapon",
+    "sprite": "weapon_axe",
+    "value": 60,
+    "tier": 2,
+    "modifiers": { "attack": 5 }
+  },
+  {
+    "id": "weapon_green_magic_staff",
+    "name": "Cajado Verdejante",
+    "description": "Um cajado que vibra com magia natural.",
+    "kind": "weapon",
+    "sprite": "weapon_green_magic_staff",
+    "value": 70,
+    "tier": 2,
+    "modifiers": { "magic": 6 }
+  },
+  {
+    "id": "weapon_red_magic_staff",
+    "name": "Cajado de Brasa",
+    "description": "Um cajado que crepita com fogo interno.",
+    "kind": "weapon",
+    "sprite": "weapon_red_magic_staff",
+    "value": 90,
+    "tier": 3,
+    "modifiers": { "magic": 8 }
+  },
+  {
+    "id": "weapon_katana",
+    "name": "Katana Sombria",
+    "description": "Corte preciso e mortal.",
+    "kind": "weapon",
+    "sprite": "weapon_katana",
+    "value": 110,
+    "tier": 3,
+    "modifiers": { "attack": 8, "crit": 0.05 }
+  },
+  {
+    "id": "weapon_red_gem_sword",
+    "name": "Lâmina Gemada",
+    "description": "Uma espada com uma gema vermelha pulsante.",
+    "kind": "weapon",
+    "sprite": "weapon_red_gem_sword",
+    "value": 120,
+    "tier": 3,
+    "modifiers": { "attack": 7, "magic": 3 }
+  },
+  {
+    "id": "weapon_golden_sword",
+    "name": "Lâmina Dourada",
+    "description": "Reluz com poder antigo.",
+    "kind": "weapon",
+    "sprite": "weapon_golden_sword",
+    "value": 150,
+    "tier": 3,
+    "modifiers": { "attack": 9 }
+  },
+  {
+    "id": "weapon_lavish_sword",
+    "name": "Espada Ornamentada",
+    "description": "Uma lâmina luxuosa e perigosamente afiada.",
+    "kind": "weapon",
+    "sprite": "weapon_lavish_sword",
+    "value": 180,
+    "tier": 3,
+    "modifiers": { "attack": 11 }
+  },
+
+  {
+    "id": "armor_leather",
+    "name": "Armadura de Couro",
+    "description": "Proteção leve e flexível.",
+    "kind": "armor",
+    "sprite": "armor_leather",
+    "value": 40,
+    "tier": 1,
+    "modifiers": { "defense": 3, "resistance": 1 }
+  },
+  {
+    "id": "armor_chain",
+    "name": "Cota de Malha",
+    "description": "Elos de aço que absorvem golpes.",
+    "kind": "armor",
+    "sprite": "armor_chain",
+    "value": 90,
+    "tier": 2,
+    "modifiers": { "defense": 5, "resistance": 3, "maxHp": 8 }
+  },
+  {
+    "id": "armor_plate",
+    "name": "Armadura de Placas",
+    "description": "Aço pesado forjado para a guerra.",
+    "kind": "armor",
+    "sprite": "armor_plate",
+    "value": 160,
+    "tier": 3,
+    "modifiers": { "defense": 8, "resistance": 5, "maxHp": 16 }
+  },
+
+  {
+    "id": "ring_power",
+    "name": "Anel do Poder",
+    "description": "Fortalece os golpes de quem o usa.",
+    "kind": "relic",
+    "sprite": "ring_power",
+    "value": 50,
+    "tier": 1,
+    "modifiers": { "attack": 3 }
+  },
+  {
+    "id": "amulet_focus",
+    "name": "Amuleto do Foco",
+    "description": "Clareia a mente e amplia a magia.",
+    "kind": "relic",
+    "sprite": "amulet_focus",
+    "value": 95,
+    "tier": 2,
+    "modifiers": { "magic": 4 }
+  },
+  {
+    "id": "band_vigor",
+    "name": "Bracelete do Vigor",
+    "description": "Reforça a vitalidade do portador.",
+    "kind": "relic",
+    "sprite": "band_vigor",
+    "value": 95,
+    "tier": 2,
+    "modifiers": { "maxHp": 20 }
+  },
+  {
+    "id": "crown_abyss",
+    "name": "Coroa do Abismo",
+    "description": "Uma relíquia que pulsa com poder proibido.",
+    "kind": "relic",
+    "sprite": "crown_abyss",
+    "value": 200,
+    "tier": 3,
+    "modifiers": { "magic": 6, "attack": 4, "maxHp": 12 }
+  }
+]

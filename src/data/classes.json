@@ -1,0 +1,209 @@
+[
+  {
+    "id": "knight",
+    "name": "Cavaleiro Amaldiçoado",
+    "description": "A maldição na armadura o mantém de pé quando qualquer outro já teria caído.",
+    "lore": "Darian Veyr foi o último cavaleiro de uma guarda que jurou proteger uma coroa sem jamais olhar para ela. Quando o juramento foi quebrado, a armadura se fechou sobre sua pele e passou a sussurrar nomes de mortos a cada noite. Anos depois, um mercador cego lhe contou que, no fundo da masmorra, existe um sino que toca o verdadeiro nome de toda maldição. Darian desce para ouvir esse nome e decidir se quer ser libertado ou se quer transformar a prisão em arma.",
+    "element": "physical",
+    "sprite": "knight_m",
+    "baseStats": {
+      "hp": 130,
+      "maxHp": 130,
+      "mana": 35,
+      "maxMana": 35,
+      "atk": 15,
+      "def": 18,
+      "spd": 7,
+      "crit": 0.08,
+      "level": 1,
+      "xp": 0,
+      "xpToNext": 75,
+      "mp": 35,
+      "maxMp": 35,
+      "attack": 15,
+      "defense": 18,
+      "magic": 5,
+      "resistance": 12,
+      "speed": 7
+    },
+    "hpPerLevel": 14,
+    "manaPerLevel": 3,
+    "atkPerLevel": 3,
+    "defPerLevel": 4,
+    "growth": {
+      "maxHp": 14,
+      "maxMana": 3,
+      "maxMp": 3,
+      "atk": 3,
+      "attack": 3,
+      "def": 4,
+      "defense": 4
+    },
+    "startingSkills": [
+      "strike",
+      "guard_break"
+    ],
+    "skillTrees": [
+      "armas",
+      "resistencia",
+      "maldicao"
+    ]
+  },
+  {
+    "id": "archmage",
+    "name": "Arquimago Exilado",
+    "description": "Expulso das torres por estudar o abismo, usa o próprio exílio como fonte de poder.",
+    "lore": "Elias Vantar desenhou, sem querer, o mapa de uma sala que ainda não existia. A Academia chamou aquilo de heresia; ele chamou de matemática incompleta. Banido, queimou a própria biblioteca para impedir que seus rivais roubassem suas notas, mas uma página voltou intacta das cinzas com uma frase escrita por outra mão: 'a prova está sob a coroa afogada'. Elias entra na masmorra para encontrar a fórmula viva do abismo e provar que não enlouqueceu, ou aceitar que a loucura sempre esteve certa.",
+    "element": "arcane",
+    "sprite": "wizzard_m",
+    "baseStats": {
+      "hp": 60,
+      "maxHp": 60,
+      "mana": 140,
+      "maxMana": 140,
+      "atk": 9,
+      "def": 6,
+      "spd": 11,
+      "crit": 0.22,
+      "level": 1,
+      "xp": 0,
+      "xpToNext": 75,
+      "mp": 140,
+      "maxMp": 140,
+      "attack": 9,
+      "defense": 6,
+      "magic": 22,
+      "resistance": 14,
+      "speed": 11
+    },
+    "hpPerLevel": 6,
+    "manaPerLevel": 16,
+    "atkPerLevel": 4,
+    "defPerLevel": 1,
+    "growth": {
+      "maxHp": 6,
+      "maxMana": 16,
+      "maxMp": 16,
+      "atk": 4,
+      "attack": 4,
+      "magic": 5,
+      "def": 1,
+      "defense": 1
+    },
+    "startingSkills": [
+      "strike",
+      "arcane_bolt",
+      "mend"
+    ],
+    "skillTrees": [
+      "arcano",
+      "critico",
+      "abismo"
+    ]
+  },
+  {
+    "id": "paladin",
+    "name": "Paladino Caído",
+    "description": "Sua fé quebrou, mas a chama sagrada continuou queimando dentro das ruínas.",
+    "lore": "Mara Caldus carregava estandartes, não dúvidas. Então sua ordem purificou uma aldeia inteira por causa de um rumor falso e chamou as cinzas de vitória. Mara abandonou o templo, mas não conseguiu apagar o fogo que recebeu no juramento. Agora ouve dizer que uma santa sem rosto foi vista rezando entre as câmaras inferiores da masmorra. Ela desce para perguntar se ainda existe perdão para quem obedeceu tarde demais.",
+    "element": "fire",
+    "sprite": "dwarf_m",
+    "baseStats": {
+      "hp": 100,
+      "maxHp": 100,
+      "mana": 90,
+      "maxMana": 90,
+      "atk": 13,
+      "def": 13,
+      "spd": 9,
+      "crit": 0.12,
+      "level": 1,
+      "xp": 0,
+      "xpToNext": 75,
+      "mp": 90,
+      "maxMp": 90,
+      "attack": 13,
+      "defense": 13,
+      "magic": 14,
+      "resistance": 13,
+      "speed": 9
+    },
+    "hpPerLevel": 10,
+    "manaPerLevel": 9,
+    "atkPerLevel": 3,
+    "defPerLevel": 3,
+    "growth": {
+      "maxHp": 10,
+      "maxMana": 9,
+      "maxMp": 9,
+      "atk": 3,
+      "attack": 3,
+      "magic": 3,
+      "def": 3,
+      "defense": 3
+    },
+    "startingSkills": [
+      "strike",
+      "firebolt",
+      "mend"
+    ],
+    "skillTrees": [
+      "fogo",
+      "cura",
+      "penitencia"
+    ]
+  },
+  {
+    "id": "necromancer",
+    "name": "Necromante Solitário",
+    "description": "Sem discípulos e sem reino, conversa apenas com os mortos que ainda aceitam responder.",
+    "lore": "Seren Noct aprendeu necromancia para se despedir, não para comandar. Mesmo assim, toda alma que chamava vinha com a voz errada, até que uma criança morta há cem anos pronunciou o nome de sua irmã desaparecida. A voz vinha de baixo, sempre mais baixo, junto de um frio que cheirava a veneno e sal. Seren entra na masmorra para encontrar a alma que roubou o último adeus de sua família, e talvez descobrir por que os mortos têm medo dela.",
+    "element": "poison",
+    "sprite": "necromancer",
+    "baseStats": {
+      "hp": 75,
+      "maxHp": 75,
+      "mana": 115,
+      "maxMana": 115,
+      "atk": 11,
+      "def": 8,
+      "spd": 10,
+      "crit": 0.14,
+      "level": 1,
+      "xp": 0,
+      "xpToNext": 75,
+      "mp": 115,
+      "maxMp": 115,
+      "attack": 11,
+      "defense": 8,
+      "magic": 18,
+      "resistance": 15,
+      "speed": 10
+    },
+    "hpPerLevel": 7,
+    "manaPerLevel": 12,
+    "atkPerLevel": 3,
+    "defPerLevel": 2,
+    "growth": {
+      "maxHp": 7,
+      "maxMana": 12,
+      "maxMp": 12,
+      "atk": 3,
+      "attack": 3,
+      "magic": 4,
+      "def": 2,
+      "defense": 2
+    },
+    "startingSkills": [
+      "strike",
+      "frost_shard",
+      "poison_mist",
+      "spark"
+    ],
+    "skillTrees": [
+      "gelo",
+      "veneno",
+      "controle"
+    ]
+  }
+]

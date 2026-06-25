@@ -1,0 +1,722 @@
+[
+  {
+    "id": "a1_p1", "floor": 1, "required": true,
+    "title": "O Contador de Almas",
+    "lore": "A inscrição pulsa com luz âmbar. 'Diga-me quantas almas pares dormem nesta câmara...'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: loops e condicionais",
+    "difficulty": 1,
+    "description": "Crie uma função 'solution' que recebe uma lista de números e retorna quantos são pares.",
+    "starterCode": "function solution(numeros) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,3,4,5]], "expected": 2, "description": "Lista mista"},
+      {"input": [[2,4,6,8]], "expected": 4, "description": "Todos pares"},
+      {"input": [[1,3,5]], "expected": 0, "description": "Nenhum par"},
+      {"input": [[]], "expected": 0, "description": "Lista vazia"}
+    ],
+    "hint": "Use um loop e verifique se numero % 2 === 0.",
+    "reward": {"xp": 80, "itemId": null}
+  },
+  {
+    "id": "a1_p2", "floor": 1, "required": false,
+    "title": "A Soma dos Vivos",
+    "lore": "Runas verdes serpenteiam pela parede. 'Apenas o que respira conta; some os positivos.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: loops e acumuladores",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe uma lista de números e retorna a soma apenas dos positivos.",
+    "starterCode": "function solution(numeros) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,-2,3,-4]], "expected": 4, "description": "Mistos"},
+      {"input": [[-1,-2,-3]], "expected": 0, "description": "Todos negativos"},
+      {"input": [[5,5,5]], "expected": 15, "description": "Todos positivos"},
+      {"input": [[]], "expected": 0, "description": "Vazia"}
+    ],
+    "hint": "Acumule numa variável só quando numero > 0.",
+    "reward": {"xp": 110, "itemId": "flask_red"}
+  },
+  {
+    "id": "a1_p3", "floor": 1, "required": false,
+    "title": "O Trono do Maior",
+    "lore": "Uma coroa de pedra repousa sobre o pedestal. 'Somente o maior pode tocá-la.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: comparação e iteração",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe uma lista de números e retorna o maior valor.",
+    "starterCode": "function solution(numeros) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[3,1,4,1,5]], "expected": 5, "description": "Mistos"},
+      {"input": [[-1,-5,-3]], "expected": -1, "description": "Negativos"},
+      {"input": [[42]], "expected": 42, "description": "Único"},
+      {"input": [[7,7,7]], "expected": 7, "description": "Iguais"}
+    ],
+    "hint": "Guarde um 'maior' inicial e atualize-o ao encontrar algo maior.",
+    "reward": {"xp": 100, "itemId": null}
+  },
+  {
+    "id": "a1_p4", "floor": 1, "required": false,
+    "title": "O Espelho de Sílabas",
+    "lore": "A água parada reflete as letras ao contrário. 'O que se lê igual nos dois sentidos é puro.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: strings e simetria",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe um texto e retorna true se ele é um palíndromo (lê-se igual de trás pra frente).",
+    "starterCode": "function solution(texto) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["arara"], "expected": true, "description": "Palíndromo"},
+      {"input": ["python"], "expected": false, "description": "Não é"},
+      {"input": ["ana"], "expected": true, "description": "Curto"},
+      {"input": [""], "expected": true, "description": "Vazio"}
+    ],
+    "hint": "Compare o texto com ele mesmo invertido.",
+    "reward": {"xp": 110, "itemId": "flask_blue"}
+  },
+  {
+    "id": "a2_p1", "floor": 2, "required": true,
+    "title": "O Sussurro das Vogais",
+    "lore": "Vozes ecoam da fenda. 'Conte as vogais do meu nome e a porta cederá.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: strings e contagem",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe um texto e retorna quantas vogais (a, e, i, o, u, maiúsculas ou minúsculas) ele contém.",
+    "starterCode": "function solution(texto) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["abc"], "expected": 1, "description": "Uma vogal"},
+      {"input": ["aeiou"], "expected": 5, "description": "Só vogais"},
+      {"input": ["xyz"], "expected": 0, "description": "Nenhuma"},
+      {"input": ["Arcano"], "expected": 3, "description": "Com maiúscula"}
+    ],
+    "hint": "Percorra cada caractere e verifique se está no conjunto de vogais (minúsculo).",
+    "reward": {"xp": 100, "itemId": null}
+  },
+  {
+    "id": "a2_p2", "floor": 2, "required": false,
+    "title": "A Cadência do Tolo",
+    "lore": "Um bardo esquelético dedilha um alaúde quebrado. 'Cante a contagem, mas troque os múltiplos.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: condicionais e módulo",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe um número n e retorna 'Fizz' se for múltiplo de 3, 'Buzz' se de 5, 'FizzBuzz' se de ambos, senão o próprio n.",
+    "starterCode": "function solution(n) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [3], "expected": "Fizz", "description": "Múltiplo de 3"},
+      {"input": [5], "expected": "Buzz", "description": "Múltiplo de 5"},
+      {"input": [15], "expected": "FizzBuzz", "description": "Múltiplo de 15"},
+      {"input": [7], "expected": 7, "description": "Nenhum"}
+    ],
+    "hint": "Teste n % 15 antes de n % 3 e n % 5.",
+    "reward": {"xp": 120, "itemId": null}
+  },
+  {
+    "id": "a2_p3", "floor": 2, "required": false,
+    "title": "O Pergaminho Reverso",
+    "lore": "As letras do pergaminho fluem para trás. 'Devolva-as à ordem do espelho.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: strings",
+    "difficulty": 1,
+    "description": "Crie 'solution' que recebe um texto e retorna o texto invertido.",
+    "starterCode": "function solution(texto) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["abc"], "expected": "cba", "description": "Simples"},
+      {"input": ["arcano"], "expected": "onacra", "description": "Palavra"},
+      {"input": [""], "expected": "", "description": "Vazio"},
+      {"input": ["a"], "expected": "a", "description": "Único"}
+    ],
+    "hint": "Percorra de trás pra frente ou use métodos de string/lista.",
+    "reward": {"xp": 120, "itemId": "flask_red"}
+  },
+  {
+    "id": "a2_p4", "floor": 2, "required": false,
+    "title": "O Compressor de Ecos",
+    "lore": "O eco repete cada letra sem fim. 'Conte as repetições e silencie o excesso.'",
+    "type": "code", "language": "both",
+    "curriculum": "Fundamentos: strings e contagem de sequências",
+    "difficulty": 1,
+    "description": "Crie 'solution' que comprime um texto trocando cada letra por ela seguida do número de repetições consecutivas. Ex.: 'aaabbc' -> 'a3b2c1'.",
+    "starterCode": "function solution(texto) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["aaabbc"], "expected": "a3b2c1", "description": "Repetições"},
+      {"input": ["abc"], "expected": "a1b1c1", "description": "Sem repetir"},
+      {"input": [""], "expected": "", "description": "Vazio"},
+      {"input": ["aaaa"], "expected": "a4", "description": "Tudo igual"}
+    ],
+    "hint": "Acompanhe o caractere atual e um contador; ao mudar, anexe letra + contagem.",
+    "reward": {"xp": 130, "itemId": null}
+  },
+  {
+    "id": "a3_p1", "floor": 3, "required": true,
+    "title": "A Espiral do Fatorial",
+    "lore": "Engrenagens de osso giram numa espiral infinita. 'Multiplique a descida até a unidade.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: iteração e acumulação",
+    "difficulty": 2,
+    "description": "Crie 'solution' que recebe um número n e retorna o fatorial de n (n! = n*(n-1)*...*1, com 0! = 1) usando um loop.",
+    "starterCode": "function solution(n) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [0], "expected": 1, "description": "Zero"},
+      {"input": [1], "expected": 1, "description": "Um"},
+      {"input": [5], "expected": 120, "description": "Cinco"},
+      {"input": [6], "expected": 720, "description": "Seis"}
+    ],
+    "hint": "Comece com resultado = 1 e multiplique de 2 até n.",
+    "reward": {"xp": 120, "itemId": null}
+  },
+  {
+    "id": "a3_p2", "floor": 3, "required": false,
+    "title": "A Chama Elevada",
+    "lore": "Tochas se acendem em potências. 'Eleve sem o feitiço proibido dos asteriscos duplos.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: loops e multiplicação",
+    "difficulty": 2,
+    "description": "Crie 'solution(base, expoente)' que retorna base elevado a expoente (expoente inteiro >= 0) SEM usar o operador de potência.",
+    "starterCode": "function solution(base, expoente) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [2,3], "expected": 8, "description": "2^3"},
+      {"input": [5,0], "expected": 1, "description": "Expoente zero"},
+      {"input": [3,2], "expected": 9, "description": "3^2"},
+      {"input": [10,1], "expected": 10, "description": "Expoente um"}
+    ],
+    "hint": "Multiplique a base por ela mesma 'expoente' vezes, começando de 1.",
+    "reward": {"xp": 140, "itemId": "flask_big_blue"}
+  },
+  {
+    "id": "a3_p3", "floor": 3, "required": false,
+    "title": "O Censo do Alvo",
+    "lore": "Olhos na escuridão piscam em contagem. 'Quantas vezes meu nome aparece entre os mortos?'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: busca e contagem",
+    "difficulty": 2,
+    "description": "Crie 'solution(lista, alvo)' que retorna quantas vezes 'alvo' aparece na 'lista'.",
+    "starterCode": "function solution(lista, alvo) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,2,3,2],2], "expected": 3, "description": "Três ocorrências"},
+      {"input": [["a","b","a"],"a"], "expected": 2, "description": "Strings"},
+      {"input": [[1,2,3],9], "expected": 0, "description": "Ausente"},
+      {"input": [[],1], "expected": 0, "description": "Vazia"}
+    ],
+    "hint": "Percorra a lista e incremente quando o item for igual ao alvo.",
+    "reward": {"xp": 140, "itemId": null}
+  },
+  {
+    "id": "a3_p4", "floor": 3, "required": false,
+    "title": "O Purificador de Ecos",
+    "lore": "Reflexos duplicados assombram o salão. 'Mantenha apenas a primeira aparição de cada alma.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: conjuntos e ordem",
+    "difficulty": 2,
+    "description": "Crie 'solution(lista)' que retorna a lista sem duplicatas, preservando a ordem da primeira aparição.",
+    "starterCode": "function solution(lista) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,2,3,1]], "expected": [1,2,3], "description": "Com repetidos"},
+      {"input": [[1,1,1]], "expected": [1], "description": "Todos iguais"},
+      {"input": [[]], "expected": [], "description": "Vazia"},
+      {"input": [[4,5,6]], "expected": [4,5,6], "description": "Sem repetir"}
+    ],
+    "hint": "Guarde os já vistos num conjunto e só adicione ao resultado os inéditos.",
+    "reward": {"xp": 150, "itemId": null}
+  },
+  {
+    "id": "a4_p1", "floor": 4, "required": true,
+    "title": "Os Nomes Gêmeos",
+    "lore": "Duas lápides com letras embaralhadas. 'Se compartilham as mesmas letras, são a mesma alma.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: comparação de coleções",
+    "difficulty": 2,
+    "description": "Crie 'solution(a, b)' que retorna true se as duas strings são anagramas (mesmas letras, mesma quantidade).",
+    "starterCode": "function solution(a, b) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["amor","roma"], "expected": true, "description": "Anagrama"},
+      {"input": ["abc","abd"], "expected": false, "description": "Letras diferentes"},
+      {"input": ["",""], "expected": true, "description": "Vazios"},
+      {"input": ["listen","silent"], "expected": true, "description": "Clássico"}
+    ],
+    "hint": "Ordene as letras de cada string e compare, ou conte as frequências.",
+    "reward": {"xp": 140, "itemId": null}
+  },
+  {
+    "id": "a4_p2", "floor": 4, "required": false,
+    "title": "O Cruzamento dos Caminhos",
+    "lore": "Dois rios de luz se encontram. 'Mostre-me apenas o que pertence a ambos.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: conjuntos",
+    "difficulty": 2,
+    "description": "Crie 'solution(a, b)' que retorna a interseção das duas listas (valores em ambas), sem duplicatas e em ordem crescente.",
+    "starterCode": "function solution(a, b) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,3],[2,3,4]], "expected": [2,3], "description": "Com comuns"},
+      {"input": [[1,2],[3,4]], "expected": [], "description": "Sem comuns"},
+      {"input": [[5,5,6],[6,5]], "expected": [5,6], "description": "Com duplicatas"},
+      {"input": [[],[]], "expected": [], "description": "Vazias"}
+    ],
+    "hint": "Use um conjunto para uma lista e filtre a outra; depois ordene o resultado único.",
+    "reward": {"xp": 160, "itemId": null}
+  },
+  {
+    "id": "a4_p3", "floor": 4, "required": false,
+    "title": "O Tapeçaria Desdobrada",
+    "lore": "Uma tapeçaria de listas dentro de listas. 'Desdobre uma camada e revele o tecido.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: listas aninhadas",
+    "difficulty": 2,
+    "description": "Crie 'solution(listas)' que recebe uma lista de listas e retorna uma única lista achatada em UM nível.",
+    "starterCode": "function solution(listas) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[[1,2],[3,4]]], "expected": [1,2,3,4], "description": "Duas sublistas"},
+      {"input": [[[1],[],[2]]], "expected": [1,2], "description": "Com vazia"},
+      {"input": [[[]]], "expected": [], "description": "Só vazia"},
+      {"input": [[[5]]], "expected": [5], "description": "Único"}
+    ],
+    "hint": "Para cada sublista, adicione todos os seus itens ao resultado.",
+    "reward": {"xp": 160, "itemId": "flask_big_red"}
+  },
+  {
+    "id": "a4_p4", "floor": 4, "required": false,
+    "title": "A Soma dos Algarismos",
+    "lore": "Um ábaco fantasma estala. 'Quebre o número em algarismos e some seu peso.'",
+    "type": "code", "language": "both",
+    "curriculum": "Funções: aritmética de dígitos",
+    "difficulty": 2,
+    "description": "Crie 'solution(n)' que retorna a soma dos dígitos de um número inteiro não-negativo.",
+    "starterCode": "function solution(n) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [123], "expected": 6, "description": "Três dígitos"},
+      {"input": [0], "expected": 0, "description": "Zero"},
+      {"input": [9999], "expected": 36, "description": "Repetidos"},
+      {"input": [10], "expected": 1, "description": "Com zero"}
+    ],
+    "hint": "Use n % 10 para o último dígito e divisão inteira por 10 para avançar.",
+    "reward": {"xp": 170, "itemId": null}
+  },
+  {
+    "id": "a5_p1", "floor": 5, "required": true,
+    "title": "O Par Selado",
+    "lore": "Dois selos brilham quando seus valores somam a marca proibida. 'Encontre o par exato.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: mapas e busca",
+    "difficulty": 3,
+    "description": "Crie 'solution(numeros, alvo)' que retorna os índices [i, j] (i < j) de dois números cuja soma é 'alvo'. Retorne [] se não houver.",
+    "starterCode": "function solution(numeros, alvo) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[2,7,11,15],9], "expected": [0,1], "description": "Início"},
+      {"input": [[3,2,4],6], "expected": [1,2], "description": "Meio"},
+      {"input": [[3,3],6], "expected": [0,1], "description": "Iguais"},
+      {"input": [[1,2,3],7], "expected": [], "description": "Sem solução"}
+    ],
+    "hint": "Para cada número, verifique se (alvo - número) já apareceu num mapa de valor->índice.",
+    "reward": {"xp": 160, "itemId": null}
+  },
+  {
+    "id": "a5_p2", "floor": 5, "required": false,
+    "title": "A Roda do Destino",
+    "lore": "Um disco de pedra gira sob seus pés. 'Gire a sequência para a direita e alinhe as estrelas.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: manipulação de listas",
+    "difficulty": 3,
+    "description": "Crie 'solution(lista, k)' que rotaciona a lista 'k' posições para a direita. k pode ser maior que o tamanho.",
+    "starterCode": "function solution(lista, k) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,3,4,5],2], "expected": [4,5,1,2,3], "description": "Rotação 2"},
+      {"input": [[1,2,3],0], "expected": [1,2,3], "description": "Sem rotação"},
+      {"input": [[1,2,3],3], "expected": [1,2,3], "description": "Volta completa"},
+      {"input": [[1,2],3], "expected": [2,1], "description": "k maior que tamanho"}
+    ],
+    "hint": "Use k % tamanho e recombine as duas fatias da lista.",
+    "reward": {"xp": 180, "itemId": "weapon_axe"}
+  },
+  {
+    "id": "a5_p3", "floor": 5, "required": false,
+    "title": "A Veia Mais Rica",
+    "lore": "Filões de ouro e maldição se alternam. 'Encontre o trecho contínuo de maior valor.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: programação dinâmica (Kadane)",
+    "difficulty": 3,
+    "description": "Crie 'solution(numeros)' que retorna a maior soma de um subarranjo contíguo não-vazio.",
+    "starterCode": "function solution(numeros) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[-2,1,-3,4,-1,2,1,-5,4]], "expected": 6, "description": "Clássico"},
+      {"input": [[1,2,3]], "expected": 6, "description": "Todos positivos"},
+      {"input": [[-1,-2,-3]], "expected": -1, "description": "Todos negativos"},
+      {"input": [[5]], "expected": 5, "description": "Único"}
+    ],
+    "hint": "Mantenha a melhor soma terminando no índice atual; reinicie quando ficar negativa.",
+    "reward": {"xp": 180, "itemId": null}
+  },
+  {
+    "id": "a5_p4", "floor": 5, "required": false,
+    "title": "O Produto Alheio",
+    "lore": "Cada cristal reflete todos, menos a si mesmo. 'Multiplique o que não é você.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: prefixos e sufixos",
+    "difficulty": 3,
+    "description": "Crie 'solution(numeros)' que retorna uma lista onde cada posição é o produto de todos os outros números (sem usar divisão).",
+    "starterCode": "function solution(numeros) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,3,4]], "expected": [24,12,8,6], "description": "Quatro itens"},
+      {"input": [[2,3]], "expected": [3,2], "description": "Dois itens"},
+      {"input": [[1,2,0]], "expected": [0,0,2], "description": "Com zero"},
+      {"input": [[5]], "expected": [1], "description": "Único"}
+    ],
+    "hint": "Calcule produtos de prefixo e de sufixo e multiplique-os por posição.",
+    "reward": {"xp": 190, "itemId": null}
+  },
+  {
+    "id": "a6_p1", "floor": 6, "required": true,
+    "title": "O Dicionário Invertido",
+    "lore": "Um grimório se vira do avesso. 'Troque as chaves pelos valores e leia o oposto.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: dicionários",
+    "difficulty": 3,
+    "description": "Crie 'solution(obj)' que recebe um objeto e retorna um novo objeto com chaves e valores trocados.",
+    "starterCode": "function solution(obj) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [{"a":1,"b":2}], "expected": {"1":"a","2":"b"}, "description": "Dois pares"},
+      {"input": [{"x":"y"}], "expected": {"y":"x"}, "description": "Strings"},
+      {"input": [{}], "expected": {}, "description": "Vazio"},
+      {"input": [{"k":42}], "expected": {"42":"k"}, "description": "Valor numérico"}
+    ],
+    "hint": "Percorra as entradas e atribua resultado[valor] = chave.",
+    "reward": {"xp": 180, "itemId": null}
+  },
+  {
+    "id": "a6_p2", "floor": 6, "required": false,
+    "title": "O Registro das Frequências",
+    "lore": "Um escriba morto risca marcas para cada visitante. 'Conte quantas vezes cada um veio.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: mapas de contagem",
+    "difficulty": 3,
+    "description": "Crie 'solution(lista)' que retorna um objeto com a contagem de cada elemento da lista.",
+    "starterCode": "function solution(lista) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [["a","b","a"]], "expected": {"a":2,"b":1}, "description": "Strings"},
+      {"input": [[1,1,1]], "expected": {"1":3}, "description": "Numérico"},
+      {"input": [[]], "expected": {}, "description": "Vazia"},
+      {"input": [["x"]], "expected": {"x":1}, "description": "Único"}
+    ],
+    "hint": "Para cada item, incremente contagem[item] (iniciando em 0).",
+    "reward": {"xp": 200, "itemId": null}
+  },
+  {
+    "id": "a6_p3", "floor": 6, "required": false,
+    "title": "As Casas das Iniciais",
+    "lore": "Estandartes se organizam por brasão. 'Agrupe os nomes pela letra que os inicia.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: agrupamento",
+    "difficulty": 3,
+    "description": "Crie 'solution(palavras)' que retorna um objeto agrupando as palavras pela primeira letra, preservando a ordem de entrada.",
+    "starterCode": "function solution(palavras) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [["arara","azul","bola"]], "expected": {"a":["arara","azul"],"b":["bola"]}, "description": "Dois grupos"},
+      {"input": [["casa"]], "expected": {"c":["casa"]}, "description": "Único"},
+      {"input": [[]], "expected": {}, "description": "Vazia"},
+      {"input": [["sol","sal"]], "expected": {"s":["sol","sal"]}, "description": "Mesma letra"}
+    ],
+    "hint": "Use a primeira letra como chave e empurre a palavra na lista correspondente.",
+    "reward": {"xp": 200, "itemId": "flask_big_green"}
+  },
+  {
+    "id": "a6_p4", "floor": 6, "required": false,
+    "title": "A Fusão dos Grimórios",
+    "lore": "Dois tomos se fundem em luz. 'Quando houver conflito, que o segundo prevaleça.'",
+    "type": "code", "language": "both",
+    "curriculum": "Estruturas de dados: combinação de mapas",
+    "difficulty": 3,
+    "description": "Crie 'solution(a, b)' que retorna um novo objeto com as chaves de ambos; em conflito, o valor de 'b' prevalece.",
+    "starterCode": "function solution(a, b) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [{"a":1},{"b":2}], "expected": {"a":1,"b":2}, "description": "Sem conflito"},
+      {"input": [{"a":1},{"a":2}], "expected": {"a":2}, "description": "Conflito"},
+      {"input": [{},{}], "expected": {}, "description": "Vazios"},
+      {"input": [{"x":1,"y":2},{"y":9}], "expected": {"x":1,"y":9}, "description": "Parcial"}
+    ],
+    "hint": "Copie 'a' primeiro e depois sobrescreva com as chaves de 'b'.",
+    "reward": {"xp": 210, "itemId": null}
+  },
+  {
+    "id": "a7_p1", "floor": 7, "required": true,
+    "title": "O Oráculo Binário",
+    "lore": "Uma balança divide o salão ao meio a cada pergunta. 'Procure cortando o mundo pela metade.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: busca binária",
+    "difficulty": 4,
+    "description": "Crie 'solution(ordenada, alvo)' que faz busca binária numa lista ORDENADA e retorna o índice de 'alvo', ou -1 se ausente.",
+    "starterCode": "function solution(ordenada, alvo) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,3,5,7,9],5], "expected": 2, "description": "No meio"},
+      {"input": [[1,3,5,7,9],8], "expected": -1, "description": "Ausente"},
+      {"input": [[1,2,3],1], "expected": 0, "description": "Início"},
+      {"input": [[],4], "expected": -1, "description": "Vazia"}
+    ],
+    "hint": "Mantenha 'baixo' e 'alto'; compare com o elemento do meio e descarte metade.",
+    "reward": {"xp": 200, "itemId": null}
+  },
+  {
+    "id": "a7_p2", "floor": 7, "required": false,
+    "title": "A Dança das Bolhas",
+    "lore": "Bolhas de mana sobem ordenando-se. 'Troque os vizinhos até a harmonia crescente.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: ordenação",
+    "difficulty": 4,
+    "description": "Crie 'solution(lista)' que retorna a lista ordenada em ordem crescente implementando bubble sort.",
+    "starterCode": "function solution(lista) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[3,1,2]], "expected": [1,2,3], "description": "Pequena"},
+      {"input": [[5,4,3,2,1]], "expected": [1,2,3,4,5], "description": "Invertida"},
+      {"input": [[]], "expected": [], "description": "Vazia"},
+      {"input": [[1]], "expected": [1], "description": "Único"}
+    ],
+    "hint": "Repita passagens trocando vizinhos fora de ordem até nenhuma troca ocorrer.",
+    "reward": {"xp": 220, "itemId": "weapon_green_magic_staff"}
+  },
+  {
+    "id": "a7_p3", "floor": 7, "required": false,
+    "title": "A Confluência Ordenada",
+    "lore": "Dois córregos ordenados desaguam num só. 'Funda-os mantendo a ordem.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: merge",
+    "difficulty": 4,
+    "description": "Crie 'solution(a, b)' que recebe duas listas já ordenadas e retorna uma única lista ordenada com todos os elementos.",
+    "starterCode": "function solution(a, b) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,3,5],[2,4,6]], "expected": [1,2,3,4,5,6], "description": "Intercaladas"},
+      {"input": [[1,2],[]], "expected": [1,2], "description": "Uma vazia"},
+      {"input": [[],[]], "expected": [], "description": "Ambas vazias"},
+      {"input": [[1],[0]], "expected": [0,1], "description": "Únicos"}
+    ],
+    "hint": "Use dois ponteiros comparando as cabeças de cada lista.",
+    "reward": {"xp": 220, "itemId": null}
+  },
+  {
+    "id": "a7_p4", "floor": 7, "required": false,
+    "title": "As Ilhas do Abismo",
+    "lore": "Um mapa de terra e vazio se estende. 'Conte quantas ilhas resistem ao mar.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: busca em grade (flood fill)",
+    "difficulty": 4,
+    "description": "Crie 'solution(grade)' que recebe uma matriz de 0 (água) e 1 (terra) e retorna o número de ilhas (grupos de 1 conectados na horizontal/vertical).",
+    "starterCode": "function solution(grade) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[[1,1,0],[0,1,0],[0,0,1]]], "expected": 2, "description": "Duas ilhas"},
+      {"input": [[[0,0],[0,0]]], "expected": 0, "description": "Só água"},
+      {"input": [[[1,0,1]]], "expected": 2, "description": "Separadas"},
+      {"input": [[[1,1],[1,1]]], "expected": 1, "description": "Uma só"}
+    ],
+    "hint": "Ao achar um 1 não visitado, conte +1 e afunde (visite) toda a ilha conectada.",
+    "reward": {"xp": 230, "itemId": null}
+  },
+  {
+    "id": "a8_p1", "floor": 8, "required": true,
+    "title": "Os Dois Ponteiros",
+    "lore": "Dois espectros caminham das pontas ao centro. 'Encontre o par que soma a marca.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: dois ponteiros",
+    "difficulty": 4,
+    "description": "Crie 'solution(ordenada, alvo)' que retorna true se existem dois valores na lista ORDENADA que somam 'alvo', usando dois ponteiros.",
+    "starterCode": "function solution(ordenada, alvo) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,4,7],6], "expected": true, "description": "Existe par"},
+      {"input": [[1,2,3],7], "expected": false, "description": "Não existe"},
+      {"input": [[1,2,3,4],5], "expected": true, "description": "Par no meio"},
+      {"input": [[5],5], "expected": false, "description": "Único elemento"}
+    ],
+    "hint": "Comece com um ponteiro em cada ponta; mova conforme a soma seja maior ou menor que o alvo.",
+    "reward": {"xp": 220, "itemId": null}
+  },
+  {
+    "id": "a8_p2", "floor": 8, "required": false,
+    "title": "A Pilha do Mínimo",
+    "lore": "Uma torre de pratos lembra sempre o mais leve. 'Empilhe, retire e revele o menor a cada chamado.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: pilha com mínimo em O(1)",
+    "difficulty": 4,
+    "description": "Crie 'solution(operacoes)' que processa uma lista de comandos ['push', valor], ['pop'] e ['min']. Retorne uma lista com o resultado de cada comando 'min' (o menor valor na pilha naquele momento).",
+    "starterCode": "function solution(operacoes) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[["push",5],["push",3],["min"],["pop"],["min"]]], "expected": [3,5], "description": "Push/pop/min"},
+      {"input": [[["push",2],["min"]]], "expected": [2], "description": "Um elemento"},
+      {"input": [[["push",1],["push",1],["min"],["pop"],["min"]]], "expected": [1,1], "description": "Repetidos"},
+      {"input": [[["push",4],["push",2],["push",6],["min"]]], "expected": [2], "description": "Mínimo no meio"}
+    ],
+    "hint": "Mantenha uma pilha auxiliar com o mínimo atual em cada nível.",
+    "reward": {"xp": 250, "itemId": "weapon_red_magic_staff"}
+  },
+  {
+    "id": "a8_p3", "floor": 8, "required": false,
+    "title": "A Assembleia dos Anagramas",
+    "lore": "Almas com as mesmas letras se reúnem em círculos. 'Agrupe os que partilham o alfabeto.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: agrupamento por chave canônica",
+    "difficulty": 4,
+    "description": "Crie 'solution(palavras)' que agrupa anagramas. Cada grupo deve estar ordenado alfabeticamente, e a lista de grupos ordenada pela primeira palavra de cada grupo.",
+    "starterCode": "function solution(palavras) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [["amor","roma","mora","abc"]], "expected": [["abc"],["amor","mora","roma"]], "description": "Dois grupos"},
+      {"input": [["ab","ba"]], "expected": [["ab","ba"]], "description": "Um grupo"},
+      {"input": [["a","b"]], "expected": [["a"],["b"]], "description": "Sem anagramas"},
+      {"input": [[]], "expected": [], "description": "Vazia"}
+    ],
+    "hint": "Use as letras ordenadas como chave de grupo; depois ordene cada grupo e a lista de grupos.",
+    "reward": {"xp": 250, "itemId": null}
+  },
+  {
+    "id": "a8_p4", "floor": 8, "required": false,
+    "title": "O Compressor de Linhagens",
+    "lore": "Sequências repetidas se condensam em selos. 'Registre o valor e quantas vezes ele perdura.'",
+    "type": "code", "language": "both",
+    "curriculum": "Algoritmos: codificação por repetição (run-length)",
+    "difficulty": 4,
+    "description": "Crie 'solution(lista)' que comprime sequências consecutivas iguais em pares [valor, contagem]. Ex.: [1,1,2] -> [[1,2],[2,1]].",
+    "starterCode": "function solution(lista) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,1,2,3,3,3]], "expected": [[1,2],[2,1],[3,3]], "description": "Sequências"},
+      {"input": [[]], "expected": [], "description": "Vazia"},
+      {"input": [[5]], "expected": [[5,1]], "description": "Único"},
+      {"input": [["a","a","b"]], "expected": [["a",2],["b",1]], "description": "Strings"}
+    ],
+    "hint": "Percorra acompanhando o valor atual e um contador; ao mudar, salve o par.",
+    "reward": {"xp": 240, "itemId": null}
+  },
+  {
+    "id": "a9_p1", "floor": 9, "required": true,
+    "title": "A Espiral de Fibonacci",
+    "lore": "Uma concha fóssil gira em proporções sagradas. 'Cada número nasce dos dois anteriores.'",
+    "type": "code", "language": "both",
+    "curriculum": "Recursão: Fibonacci",
+    "difficulty": 5,
+    "description": "Crie 'solution(n)' que retorna o n-ésimo número de Fibonacci (f(0)=0, f(1)=1, f(n)=f(n-1)+f(n-2)). Pode ser recursivo.",
+    "starterCode": "function solution(n) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [0], "expected": 0, "description": "Base 0"},
+      {"input": [1], "expected": 1, "description": "Base 1"},
+      {"input": [10], "expected": 55, "description": "Décimo"},
+      {"input": [7], "expected": 13, "description": "Sétimo"}
+    ],
+    "hint": "Defina os casos base f(0)=0 e f(1)=1 e some as duas chamadas recursivas.",
+    "reward": {"xp": 240, "itemId": null}
+  },
+  {
+    "id": "a9_p2", "floor": 9, "required": false,
+    "title": "A Torre de Hanói",
+    "lore": "Três pilares sustentam discos de osso. 'Quantos movimentos para mover a torre inteira?'",
+    "type": "code", "language": "both",
+    "curriculum": "Recursão: relações de recorrência",
+    "difficulty": 5,
+    "description": "Crie 'solution(n)' que retorna o número mínimo de movimentos para resolver a Torre de Hanói com n discos (2^n - 1).",
+    "starterCode": "function solution(n) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [1], "expected": 1, "description": "Um disco"},
+      {"input": [3], "expected": 7, "description": "Três discos"},
+      {"input": [0], "expected": 0, "description": "Nenhum"},
+      {"input": [10], "expected": 1023, "description": "Dez discos"}
+    ],
+    "hint": "movimentos(n) = 2 * movimentos(n-1) + 1, com movimentos(0) = 0.",
+    "reward": {"xp": 270, "itemId": null}
+  },
+  {
+    "id": "a9_p3", "floor": 9, "required": false,
+    "title": "O Abismo Aninhado",
+    "lore": "Listas dentro de listas descem ao infinito. 'Mergulhe até o fundo e traga tudo à superfície.'",
+    "type": "code", "language": "both",
+    "curriculum": "Recursão: achatar profundo",
+    "difficulty": 5,
+    "description": "Crie 'solution(aninhada)' que achata uma lista arbitrariamente aninhada em uma única lista plana, na ordem original.",
+    "starterCode": "function solution(aninhada) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,[2,[3,[4]]]]], "expected": [1,2,3,4], "description": "Profunda"},
+      {"input": [[[[]]]], "expected": [], "description": "Só vazias"},
+      {"input": [[1,2,3]], "expected": [1,2,3], "description": "Plana"},
+      {"input": [[[1],[2,[3]]]], "expected": [1,2,3], "description": "Mista"}
+    ],
+    "hint": "Para cada item: se for lista, achate recursivamente; senão, adicione-o.",
+    "reward": {"xp": 280, "itemId": "flask_big_yellow"}
+  },
+  {
+    "id": "a9_p4", "floor": 9, "required": false,
+    "title": "A Chama Recursiva",
+    "lore": "A tocha se reacende a partir de sua própria luz. 'Eleve a potência chamando a si mesma.'",
+    "type": "code", "language": "both",
+    "curriculum": "Recursão: potência",
+    "difficulty": 5,
+    "description": "Crie 'solution(base, expoente)' que calcula base elevado a expoente (expoente inteiro >= 0) de forma RECURSIVA.",
+    "starterCode": "function solution(base, expoente) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [2,10], "expected": 1024, "description": "2^10"},
+      {"input": [7,0], "expected": 1, "description": "Expoente zero"},
+      {"input": [3,3], "expected": 27, "description": "3^3"},
+      {"input": [5,2], "expected": 25, "description": "5^2"}
+    ],
+    "hint": "potencia(base, e) = base * potencia(base, e-1), com potencia(base, 0) = 1.",
+    "reward": {"xp": 270, "itemId": null}
+  },
+  {
+    "id": "a10_p1", "floor": 10, "required": true,
+    "title": "Boss I — A Litania dos Prefixos",
+    "lore": "A Coroa Abissal sussurra nomes proibidos. 'Primeiro, encontre todos que começam com o sinal.'",
+    "type": "code", "language": "both",
+    "curriculum": "Boss: busca por prefixo",
+    "difficulty": 5,
+    "description": "Fase 1. Crie 'solution(palavras, prefixo)' que retorna, na ordem original, todas as palavras que começam com 'prefixo'.",
+    "starterCode": "function solution(palavras, prefixo) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [["arcano","arco","bola","arte"],"arc"], "expected": ["arcano","arco"], "description": "Prefixo arc"},
+      {"input": [["casa","carro"],"ca"], "expected": ["casa","carro"], "description": "Ambas"},
+      {"input": [["x"],"y"], "expected": [], "description": "Nenhuma"},
+      {"input": [["abc"],""], "expected": ["abc"], "description": "Prefixo vazio"}
+    ],
+    "hint": "Verifique se cada palavra começa com o prefixo (compare os primeiros caracteres).",
+    "reward": {"xp": 300, "itemId": null}
+  },
+  {
+    "id": "a10_p2", "floor": 10, "required": true,
+    "title": "Boss II — O Padrão na Sequência",
+    "lore": "Os nomes encontrados formam um eco rítmico. 'Agora localize onde o padrão se repete.'",
+    "type": "code", "language": "both",
+    "curriculum": "Boss: busca de subsequência",
+    "difficulty": 5,
+    "description": "Fase 2. Crie 'solution(lista, padrao)' que retorna o índice inicial onde a sublista 'padrao' aparece em 'lista', ou -1 se não aparecer.",
+    "starterCode": "function solution(lista, padrao) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [[1,2,3,4],[2,3]], "expected": 1, "description": "No meio"},
+      {"input": [[1,2,3],[4]], "expected": -1, "description": "Ausente"},
+      {"input": [[5,5,5],[5,5]], "expected": 0, "description": "No início"},
+      {"input": [[1,2,3],[1,2,3]], "expected": 0, "description": "Igual"}
+    ],
+    "hint": "Para cada posição inicial possível, verifique se os elementos seguintes batem com o padrão.",
+    "reward": {"xp": 320, "itemId": null}
+  },
+  {
+    "id": "a10_p3", "floor": 10, "required": true,
+    "title": "Boss III — A Senha da Maldição",
+    "lore": "O padrão revela a cifra final. 'Desloque cada runa três passos atrás e quebre a maldição.'",
+    "type": "code", "language": "both",
+    "curriculum": "Boss: decifrar (cifra de César)",
+    "difficulty": 5,
+    "description": "Fase 3. Crie 'solution(texto)' que decifra uma cifra de César com deslocamento 3: cada letra MAIÚSCULA volta 3 posições no alfabeto (com retorno cíclico). Ex.: 'KHOOR' -> 'HELLO'.",
+    "starterCode": "function solution(texto) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": ["KHOOR"], "expected": "HELLO", "description": "Saudação"},
+      {"input": ["DEBVV"], "expected": "ABYSS", "description": "Abismo"},
+      {"input": ["DUFDQR"], "expected": "ARCANO", "description": "Arcano"},
+      {"input": ["DEF"], "expected": "ABC", "description": "Início"}
+    ],
+    "hint": "Para cada letra, use (código - 'A' - 3 + 26) % 26 + 'A'.",
+    "reward": {"xp": 360, "itemId": "weapon_red_gem_sword"}
+  },
+  {
+    "id": "a10_p4", "floor": 10, "required": false,
+    "title": "O Selo do Divisor",
+    "lore": "Uma relíquia bônus pulsa além do trono. 'Reduza dois números ao seu maior elo comum.'",
+    "type": "code", "language": "both",
+    "curriculum": "Bônus: algoritmo de Euclides",
+    "difficulty": 5,
+    "description": "Crie 'solution(a, b)' que retorna o Máximo Divisor Comum (MDC) de dois inteiros não-negativos usando o algoritmo de Euclides.",
+    "starterCode": "function solution(a, b) {\n  // seu código aqui\n}",
+    "testCases": [
+      {"input": [48,36], "expected": 12, "description": "Comum 12"},
+      {"input": [17,5], "expected": 1, "description": "Coprimos"},
+      {"input": [100,10], "expected": 10, "description": "Divisor exato"},
+      {"input": [0,5], "expected": 5, "description": "Com zero"}
+    ],
+    "hint": "Repita: mdc(a, b) = mdc(b, a % b) até b ser 0; então o resultado é a.",
+    "reward": {"xp": 400, "itemId": "weapon_lavish_sword"}
+  }
+]
