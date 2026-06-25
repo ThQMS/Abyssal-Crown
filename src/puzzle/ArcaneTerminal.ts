@@ -405,12 +405,16 @@ function button(label: string, bg: string): HTMLButtonElement {
 
 const PY_DEF = /\bdef\s+\w+\s*\([^)]*\)\s*:/;
 const JS_FN = /\bfunction\b|=>/;
+/** Primeiro construto "de topo" de cada linguagem (onde o programa de fato começa). */
+const PY_START = /\bdef\s+\w+\s*\(|\b(?:import|from|class)\b/;
+const JS_START = /\bfunction\b|\b(?:const|let|var)\b|=>/;
 
 /**
  * Decide qual linguagem rodar a partir do conteúdo do editor. Cobre o caso comum
- * de escrever numa linguagem enquanto o starter vazio da outra ainda está lá:
- * remove esse starter vazio e roda o runner correto. Sem sinal claro, respeita a
- * aba ativa.
+ * de escrever numa linguagem enquanto o starter da outra ainda está no buffer:
+ * isola o programa da linguagem detectada **a partir do seu primeiro construto**,
+ * descartando o starter da outra e qualquer lixo antes (ex.: um `}e ` perdido).
+ * Sem sinal claro, respeita a aba ativa.
  */
 export function resolveRun(raw: string, active: 'js' | 'python'): { lang: 'js' | 'python'; code: string } {
   const hasPy = PY_DEF.test(raw);
@@ -420,22 +424,18 @@ export function resolveRun(raw: string, active: 'js' | 'python'): { lang: 'js' |
   if (hasJs && !hasPy) return { lang: 'js', code: raw };
 
   if (hasPy && hasJs) {
-    const noJs = stripEmptyJsStarter(raw);
-    if (PY_DEF.test(noJs) && !JS_FN.test(noJs)) return { lang: 'python', code: noJs };
-    const noPy = stripEmptyPyStarter(raw);
-    if (JS_FN.test(noPy) && !PY_DEF.test(noPy)) return { lang: 'js', code: noPy };
+    const pyAt = raw.search(PY_START);
+    if (pyAt >= 0) {
+      const code = raw.slice(pyAt);
+      if (!JS_FN.test(code)) return { lang: 'python', code };
+    }
+    const jsAt = raw.search(JS_START);
+    if (jsAt >= 0) {
+      const code = raw.slice(jsAt);
+      if (!PY_DEF.test(code)) return { lang: 'js', code };
+    }
   }
   return { lang: active, code: raw };
-}
-
-/** Remove um `function nome(...) { …só comentários… }` (o starter JS vazio). */
-function stripEmptyJsStarter(code: string): string {
-  return code.replace(/function\s+\w+\s*\([^)]*\)\s*\{\s*(?:\/\/[^\n]*\s*)*\}/g, '').trim();
-}
-
-/** Remove um `def nome(...): …só comentários… pass` (o starter Python vazio). */
-function stripEmptyPyStarter(code: string): string {
-  return code.replace(/def\s+\w+\s*\([^)]*\)\s*:\s*(?:#[^\n]*\s*)*pass\b/g, '').trim();
 }
 
 /**

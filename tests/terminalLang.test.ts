@@ -23,6 +23,15 @@ describe('resolveRun (detecção de linguagem do puzzle)', () => {
     expect(lang).toBe('python');
     expect(code).not.toContain('function solution'); // starter vazio removido
     expect(code).toContain('def solution');
+    expect(code.startsWith('def solution')).toBe(true); // começa limpo no def
+  });
+
+  it('descarta lixo entre o starter JS e o Python (ex.: "}e def")', () => {
+    const junk = `function solution(numeros) {\n  // seu código aqui\n}e ${PY}`;
+    const { lang, code } = resolveRun(junk, 'js');
+    expect(lang).toBe('python');
+    expect(code.startsWith('def solution')).toBe(true); // sem o "}e " perdido
+    expect(code).not.toContain('function');
   });
 
   it('respeita a aba ativa quando não há código (só o starter)', () => {
