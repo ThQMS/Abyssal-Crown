@@ -11,6 +11,12 @@ procedural de masmorras — tudo no navegador, sem instalar nada.
 > Feito com **TypeScript + Vite + Canvas 2D**, sem framework de jogo. Roda 100% no
 > cliente e é publicado de graça no **GitHub Pages**. Sem backend.
 
+### ▶️ [Jogar agora](https://thqms.github.io/Abyssal-Crown/)
+
+Abre direto no navegador — **nada para instalar**. (Os puzzles em Python baixam o
+runtime Pyodide na primeira execução, então precisam de internet; o resto roda
+offline depois de carregar.)
+
 ---
 
 ## Índice
@@ -344,12 +350,35 @@ contratos que não devem mudar, ver [docs/SCALING.md](docs/SCALING.md).
 
 ## 🌐 Deploy (GitHub Pages)
 
+O jogo está publicado em **<https://thqms.github.io/Abyssal-Crown/>** e é servido
+pela branch `gh-pages` (o build estático em `dist/`).
+
 ```bash
-npm run deploy   # build + publica a pasta dist/ na branch gh-pages
+npm run deploy   # roda o build (tsc + vite) e publica dist/ na branch gh-pages
 ```
 
-O `vite.config.ts` usa `base: './'`, então o build funciona em qualquer subcaminho
-do GitHub Pages. Hospedagem **gratuita e permanente**, sem servidor.
+**Ativação única** (só na primeira vez): em **Settings → Pages**, escolha
+_Deploy from a branch_ → branch **`gh-pages`** → pasta **`/ (root)`** → _Save_.
+
+O `vite.config.ts` usa `base: './'`, então o build funciona no subcaminho
+`/Abyssal-Crown/` sem ajuste. Hospedagem **gratuita e permanente**, sem servidor.
+
+### Atualizando o jogo depois de mudar algo
+
+O site **não** se atualiza sozinho ao editar o código — é preciso **republicar**:
+
+```bash
+# 1. versiona o código-fonte (branch main)
+git add -A
+git commit -m "descreva a mudança"
+git push
+
+# 2. reconstrói e republica o jogo no Pages (branch gh-pages)
+npm run deploy
+```
+
+Em resumo: `git push` atualiza o **código** no GitHub; `npm run deploy` atualiza o
+**jogo no ar**. Os dois são passos separados.
 
 ---
 
