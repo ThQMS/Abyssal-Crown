@@ -113,7 +113,9 @@ export class PuzzleState implements GameState {
     this.game.audio.play('success');
     if (puzzleId === this.game.level.requiredPuzzleId) {
       this.game.level.unlockStairs();
-      this.game.bus.emit('toast', { text: 'As escadas se destrancam.' });
+      // A exploração está coberta pelo puzzle (sem escutar 'toast'); enfileira
+      // para ela exibir ao retomar — senão o aviso se perderia.
+      this.game.pendingToasts.push({ text: '🔓 As escadas se destrancaram! Desça para o próximo andar.', durationMs: 3600 });
     }
   }
 
@@ -122,7 +124,7 @@ export class PuzzleState implements GameState {
     const penalty = result.penalty ?? 0;
     if (penalty > 0) {
       this.game.player.takeDamage(penalty);
-      this.game.bus.emit('toast', { text: `O fracasso custa ${penalty} de vida.` });
+      this.game.pendingToasts.push({ text: `O fracasso custa ${penalty} de vida.` });
       this.game.bus.emit('PUZZLE_FAILED', { puzzleId, result });
       if (!this.game.player.isAlive()) this.game.bus.emit('player:died', undefined);
     }
@@ -140,6 +142,6 @@ export class PuzzleState implements GameState {
     for (const itemId of items) {
       this.game.player.addItem(ItemFactory.basic(itemId));
     }
-    this.game.bus.emit('toast', { text: `Puzzle resolvido! +${reward.xp} XP.` });
+    this.game.pendingToasts.push({ text: `Puzzle resolvido! +${reward.xp} XP.` });
   }
 }

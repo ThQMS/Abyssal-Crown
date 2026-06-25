@@ -212,7 +212,16 @@ export class ExploringState implements GameState {
       this.game.level.revealAround(player.position);
       if (this.maybeDescend(nx, ny)) return; // novo andar: inimigos não agem
       this.stepEnemies();
+    } else if (this.isLockedStairs(nx, ny)) {
+      this.game.audio.play('error');
+      this.hud.showToast('🔒 Escada trancada — resolva o puzzle do andar para descer.', 2600);
     }
+  }
+
+  /** True se (x,y) é a escada de saída ainda trancada por puzzle. */
+  private isLockedStairs(x: number, y: number): boolean {
+    const level = this.game.level;
+    return level.stairsLocked && x === level.exit.x && y === level.exit.y;
   }
 
   /** Retorna true se desceu de andar (regenerando o nível). */

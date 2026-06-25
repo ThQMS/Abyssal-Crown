@@ -36,18 +36,24 @@ const STATUS_GLYPHS: Record<string, string> = {
  * nível/XP, indicador de andar, minimapa, slots de habilidades e ícones de status.
  */
 export class HUD {
-  private toast?: { text: string; remaining: number };
+  /** Fila de avisos: mostrados um de cada vez, em ordem de chegada. */
+  private readonly toasts: { text: string; remaining: number }[] = [];
   private clockMs = 0;
 
   showToast(text: string, durationMs = 2200): void {
-    this.toast = { text, remaining: durationMs };
+    // Evita duplicar a mesma mensagem que já está aguardando/exibindo.
+    if (this.toasts.some((t) => t.text === text)) return;
+    this.toasts.push({ text, remaining: durationMs });
+    // Cap defensivo para não acumular uma fila enorme.
+    if (this.toasts.length > 6) this.toasts.splice(0, this.toasts.length - 6);
   }
 
   update(dtMs: number): void {
     this.clockMs += dtMs;
-    if (this.toast) {
-      this.toast.remaining -= dtMs;
-      if (this.toast.remaining <= 0) this.toast = undefined;
+    const current = this.toasts[0];
+    if (current) {
+      current.remaining -= dtMs;
+      if (current.remaining <= 0) this.toasts.shift();
     }
   }
 
@@ -239,18 +245,19 @@ export class HUD {
   }
 
   private drawToast(ctx: CanvasRenderingContext2D, width: number): void {
-    if (!this.toast) return;
-    const alpha = Math.min(1, this.toast.remaining / 600);
+    const toast = this.toasts[0];
+    if (!toast) return;
+    const alpha = Math.min(1, toast.remaining / 600);
     ctx.font = '12px "Courier New", monospace';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'alphabetic';
-    const tw = ctx.measureText(this.toast.text).width + 24;
+    const tw = ctx.measureText(toast.text).width + 24;
     const x = width / 2;
     const y = 44;
     ctx.fillStyle = withAlpha('#12101a', 0.85 * alpha);
     ctx.fillRect(x - tw / 2, y - 14, tw, 22);
     ctx.fillStyle = withAlpha('#e8e8f0', alpha);
-    ctx.fillText(this.toast.text, x, y + 2);
+    ctx.fillText(toast.text, x, y + 2);
   }
 }
 
